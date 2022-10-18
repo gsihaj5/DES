@@ -8,15 +8,27 @@ import java.util.Scanner;
 public class App {
 
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
+		// Scanner scanner = new Scanner(System.in);
 
-		System.out.println("Test Input");
+		// System.out.println("Test Input");
 
-		while (scanner.hasNextLine()) {
-			String input = scanner.nextLine();
-			System.out.println(input);
-		}
+		// while (scanner.hasNextLine()) {
+		// String input = scanner.nextLine();
+		// System.out.println(input);
+		// }
 
-		scanner.close();
+		// scanner.close();
+		String text = "123456ABCD132536";
+		String key = "AABB09182736CCDD";
+
+		DES cipher = new DES();
+		System.out.println("Encryption:\n");
+		text = cipher.encrypt(text, key);
+		System.out.println(
+				"\nCipher Text: " + text.toUpperCase() + "\n");
+		System.out.println("Decryption\n");
+		text = cipher.decrypt(text, key);
+		System.out.println("\nPlain Text: "
+				+ text.toUpperCase());
 	}
 }
